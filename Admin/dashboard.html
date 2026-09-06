@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>QUIZARENA Control Center</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "inverse-primary": "#a5c8ff", "on-secondary-fixed-variant": "#00429c", "secondary-fixed-dim": "#b0c6ff", "secondary-container": "#759efd", "background": "#f3faff", "on-surface-variant": "#414752", "on-tertiary": "#ffffff", "inverse-on-surface": "#dff4ff", "on-background": "#021f29", "surface-tint": "#005faf", "surface": "#f3faff", "on-secondary-container": "#00337c", "primary": "#005dac", "on-primary-fixed-variant": "#004786", "on-primary-fixed": "#001c3a", "on-tertiary-container": "#fffdff", "on-surface": "#021f29", "outline": "#717783", "tertiary": "#00619b", "error": "#ba1a1a", "tertiary-container": "#007ac2", "on-secondary-fixed": "#001945", "surface-container": "#d8f2ff", "inverse-surface": "#19343e", "primary-container": "#1976d2", "surface-container-high": "#d1ecfa", "on-tertiary-fixed-variant": "#004a78", "surface-variant": "#cbe7f5", "on-error": "#ffffff", "on-tertiary-fixed": "#001d34", "on-secondary": "#ffffff", "tertiary-fixed-dim": "#99cbff", "surface-dim": "#c3deec", "surface-container-low": "#e6f6ff", "secondary": "#2b5bb5", "tertiary-fixed": "#cfe5ff", "primary-fixed": "#d4e3ff", "on-primary-container": "#fffdff", "surface-container-highest": "#cbe7f5", "error-container": "#ffdad6", "on-primary": "#ffffff", "primary-fixed-dim": "#a5c8ff", "surface-container-lowest": "#ffffff", "on-error-container": "#93000a", "surface-bright": "#f3faff", "secondary-fixed": "#d9e2ff", "outline-variant": "#c1c6d4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "gutter-mobile": "1rem", "space-sm": "0.75rem", "space-2xl": "3rem", "header-height": "4rem", "space-2xs": "0.25rem", "space-md": "1rem", "sidebar-width": "17.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-xs": "0.5rem" }, "fontFamily": { "headline-lg": ["Inter"], "display-stat": ["Inter"], "label-md": ["Inter"], "label-sm": ["Inter"], "headline-lg-mobile": ["Inter"], "title": ["Inter"], "headline-sm": ["Inter"], "body-sm": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"], "telemetry-mono": ["Inter"], "body-md": ["Inter"] }, "fontSize": { "headline-lg": ["2rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-stat": ["3rem", { "lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["0.875rem", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500" }], "label-sm": ["0.6875rem", { "lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600" }], "headline-lg-mobile": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600" }], "title": ["1rem", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "600" }], "headline-sm": ["1.25rem", { "lineHeight": "1.4", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "400" }], "body-lg": ["1rem", { "lineHeight": "1.5", "letterSpacing": "0", "fontWeight": "400" }], "headline-md": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600" }], "telemetry-mono": ["0.875rem", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.45", "letterSpacing": "0", "fontWeight": "400" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased min-h-full"><aside class="fixed left-0 top-0 bottom-0 w-sidebar-width bg-on-secondary-fixed flex flex-col z-50 shadow-[0_1px_8px_rgba(0,0,0,0.12)]"><div class="h-header-height px-space-md flex items-center gap-space-sm border-b border-on-secondary-fixed-variant"><img alt="QUIZARENA Brand Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U0Ahs6ktUjp7AMVZfODYYLQZGXbvgwOxD_dML8vVgq1wjqH-tCCAnDZV2fp3cB3vP-F2-ljwGjSN5qIBxFhG6EoJizkjGLa6qmP1xlclYiaHt3Car3eBTPQPWYB1QnE40THARqSKy9Tb51EZZiPCBN4SjGa8q2Y-8mdY9pIcYxU9YwIqmrmFqKRxC6x5TzzdNhz0AFYrBod4QRaMk9LCgaAwYQZcvquWAkt53dwNyvBGvVLLqgaq40mZI"/><div class="flex flex-col min-w-0"><span class="font-title text-title text-on-primary font-bold tracking-tight truncate">QUIZARENA</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-wider truncate">Control Center</span></div></div><nav class="flex-1 px-space-xs py-space-md space-y-space-2xs overflow-y-auto" data-active-classes="bg-primary-container text-on-primary-container font-semibold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg transition-colors bg-primary-container text-on-primary-container font-semibold shadow-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span>Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="questions" href="question.html"><span class="material-symbols-outlined text-xl">quiz</span><span>Questions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="teams" href="team.html"><span class="material-symbols-outlined text-xl">groups</span><span>Teams</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="submissions" href="submission.html"><span class="material-symbols-outlined text-xl">fact_check</span><span>Submissions</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="round-control" href="round_control.html"><span class="material-symbols-outlined text-xl">play_circle</span><span>Round Control</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="leaderboard" href="leaderboard.html"><span class="material-symbols-outlined text-xl">leaderboard</span><span>Leaderboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-space-xs rounded-lg text-primary-fixed hover:bg-on-secondary-fixed-variant hover:text-on-primary transition-colors font-label-md text-label-md" data-path="analytics" href="analytics.html"><span class="material-symbols-outlined text-xl">analytics</span><span>Analytics</span></a></nav><div class="p-space-sm bg-on-secondary-fixed border-t border-on-secondary-fixed-variant"><div class="flex items-center justify-between p-space-xs rounded-lg bg-on-primary-fixed"><div class="flex items-center gap-space-xs min-w-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-secondary-container flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwJXK7igsCTqyVAfjWHPO-wYnxQgHQgHWrujHgD1zwE-u3lNbDo64ViZSCbSjrJk0sX2uXe7iTcOdIaJ8YGVfYW6xv_lYdZs2dCTyc7Dp48jrDgBJdKHYRBAp-oW_ZfnWoFBu5vKFbqDQjBSkTIRhknSy6AnMLCzoAyC7Qdqen6tYotK32_2dGH5idVXqNF8xpqzfS6-uIHU5wGLQlBKLwZP3dztG0HZCWtWo63ICchDscTKIZIGlcXQ"/><div class="flex flex-col min-w-0"><span class="font-label-md text-label-md text-on-primary font-semibold truncate leading-tight">Alex Vance</span><span class="font-label-sm text-label-sm text-secondary-fixed-dim truncate">Super Admin</span></div></div><a class="p-space-2xs text-primary-fixed hover:text-error transition-colors rounded" data-path="login" href="#" title="Logout"><span class="material-symbols-outlined text-lg">logout</span></a></div></div></aside><div class="pl-sidebar-width min-h-screen flex flex-col bg-surface"><header class="fixed top-0 left-sidebar-width right-0 h-header-height bg-surface-container-lowest border-b border-surface-variant z-40 px-space-md flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-1"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-low border border-surface-container-highest rounded-full"><span class="font-label-md text-label-md text-primary font-semibold">Tech Titans Quiz 2026</span><span class="h-3 w-px bg-outline-variant"></span><span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary-container font-semibold"><span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>LIVE (Round 2/4)</span></div><div class="relative max-w-md w-full"><span class="material-symbols-outlined absolute left-space-xs top-1/2 -translate-y-1/2 text-outline text-lg">search</span><input class="w-full h-9 pl-8 pr-space-sm bg-surface-container-low border border-surface-variant rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary transition-colors" placeholder="Search questions, teams, participants..." type="text"/></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-1 px-space-xs py-1 rounded bg-surface-container-low font-telemetry-mono text-telemetry-mono text-tertiary"><span class="material-symbols-outlined text-sm text-tertiary-container">speed</span><span>18ms</span></div><button aria-label="Notifications" class="relative p-space-xs rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-xl">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error font-label-sm text-label-sm rounded-full flex items-center justify-center font-bold">4</span></button><div class="flex items-center gap-space-xs pl-space-xs border-l border-surface-variant"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-surface-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwJXK7igsCTqyVAfjWHPO-wYnxQgHQgHWrujHgD1zwE-u3lNbDo64ViZSCbSjrJk0sX2uXe7iTcOdIaJ8YGVfYW6xv_lYdZs2dCTyc7Dp48jrDgBJdKHYRBAp-oW_ZfnWoFBu5vKFbqDQjBSkTIRhknSy6AnMLCzoAyC7Qdqen6tYotK32_2dGH5idVXqNF8xpqzfS6-uIHU5wGLQlBKLwZP3dztG0HZCWtWo63ICchDscTKIZIGlcXQ"/><span class="material-symbols-outlined text-outline text-lg">arrow_drop_down</span></div></div></header><main class="w-full pt-header-height flex-1 p-space-lg bg-surface"><div class="flex flex-col w-full space-y-space-lg">
+<!-- TOP TITLE & OPERATIONAL CONTROLS HEADER -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Competition Dashboard</h1>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm uppercase font-semibold">Stage A</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor and manage your live competition in real-time with telemetry-grade precision.</p>
+</div>
+<!-- Right Header Quick Controls -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<button class="inline-flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold hover:bg-surface-container transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-xl">campaign</span>
+<span>Broadcast Alert</span>
+</button>
+<!-- Emergency Controls Menu Trigger -->
+<div class="relative inline-block text-left" id="emergencyDropdownWrapper">
+<button class="inline-flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-error text-on-error font-label-md text-label-md font-semibold hover:opacity-90 active:scale-95 transition-all shadow-sm" id="emergencyButton" type="button">
+<span class="material-symbols-outlined text-xl">warning</span>
+<span>Emergency Controls</span>
+<span class="material-symbols-outlined text-lg">expand_more</span>
+</button>
+<!-- Dropdown Menu -->
+<div class="hidden absolute right-0 mt-2 w-56 rounded-xl bg-surface-container-lowest shadow-xl z-50 p-space-xs space-y-1" id="emergencyMenu">
+<button class="w-full flex items-center gap-space-xs px-space-sm py-2 rounded-lg text-error hover:bg-error-container text-left font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">pause_presentation</span>
+<span>Freeze All Consoles</span>
+</button>
+<button class="w-full flex items-center gap-space-xs px-space-sm py-2 rounded-lg text-error hover:bg-error-container text-left font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">restart_alt</span>
+<span>Rollback Last Question</span>
+</button>
+<button class="w-full flex items-center gap-space-xs px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container text-left font-label-md text-label-md transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">phonelink_lock</span>
+<span>Lock Participant Auth</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TOP SUMMARY CARDS (Grid of 5) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-space-md">
+<!-- Card 1: Total Teams -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Total Teams</span>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">groups</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-display-stat text-headline-lg text-on-surface block font-bold">24 Teams</span>
+<div class="flex items-center gap-1 mt-1 text-primary">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-sm text-label-sm font-semibold">+2 from qualifier</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Total Participants -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Total Participants</span>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">badge</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-display-stat text-headline-lg text-on-surface block font-bold">96 Active</span>
+<div class="flex items-center gap-1 mt-1 text-tertiary">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">100% check-in rate</span>
+</div>
+</div>
+</div>
+<!-- Card 3: Questions Catalog -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Questions Catalog</span>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">quiz</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-display-stat text-headline-lg text-on-surface block font-bold">20 Questions</span>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">lock_open</span>
+<span class="font-label-sm text-label-sm">7 unlocked, 13 pending</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Active Round -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Active Round</span>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">timer</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-display-stat text-headline-lg text-on-surface block font-bold">Round 2 / 4</span>
+<div class="flex items-center gap-1 mt-1 text-primary-container">
+<span class="material-symbols-outlined text-sm">bolt</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">Speed & Logic Round</span>
+</div>
+</div>
+</div>
+<!-- Card 5: Total Submissions -->
+<div class="relative overflow-hidden bg-surface-container-lowest rounded-xl p-space-md shadow-sm transition-all hover:shadow-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider font-semibold">Submissions</span>
+<div class="p-2 rounded-lg bg-surface-container text-primary">
+<span class="material-symbols-outlined text-xl">send</span>
+</div>
+</div>
+<div class="mt-space-sm">
+<span class="font-display-stat text-headline-lg text-on-surface block font-bold">348 Total</span>
+<div class="flex items-center gap-1 mt-1 text-secondary">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label-sm text-label-sm font-semibold">84% accuracy rate</span>
+</div>
+</div>
+</div>
+</div>
+<!-- LIVE COMPETITION HERO CARD (Cockpit banner) -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-r from-on-secondary-fixed via-primary to-secondary p-space-lg text-on-primary shadow-lg">
+<!-- Ambient glowing visual backdrops -->
+<div class="absolute -right-16 -top-16 w-80 h-80 bg-secondary-container opacity-20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute left-1/3 -bottom-20 w-64 h-64 bg-primary-container opacity-30 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="space-y-space-sm max-w-2xl">
+<!-- Live status header strip -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-surface-container-lowest/15 backdrop-blur-md text-on-primary font-label-sm text-label-sm font-bold uppercase tracking-wider">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-bright animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-surface-bright absolute"></span>
+            LIVE COMPETITION
+          </span>
+<span class="text-primary-fixed-dim font-label-md text-label-md">•</span>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-tight">Tech Titans Quiz 2026</span>
+<span class="px-2 py-0.5 rounded bg-primary-container/60 text-primary-fixed font-telemetry-mono text-body-sm uppercase">Room #TT-892</span>
+</div>
+<!-- Telemetry key strip -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md pt-space-xs">
+<div class="bg-on-secondary-fixed/40 backdrop-blur-md p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim block uppercase">Current Focus</span>
+<span class="font-title text-title text-on-primary font-semibold mt-0.5 block">Round 2: Algorithmic Riddles</span>
+</div>
+<div class="bg-on-secondary-fixed/40 backdrop-blur-md p-space-sm rounded-lg">
+<span class="font-label-sm text-label-sm text-primary-fixed-dim block uppercase">Question Slot</span>
+<span class="font-title text-title text-on-primary font-semibold mt-0.5 block">Question 7 of 20 <span class="text-primary-fixed font-label-sm text-body-sm font-normal">(Progressive)</span></span>
+</div>
+<div class="bg-on-secondary-fixed/40 backdrop-blur-md p-space-sm rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim block uppercase">Pacing Auto-Sync</span>
+<span class="font-title text-title text-on-primary font-semibold mt-0.5 block">SYNCED (24/24)</span>
+</div>
+<span class="material-symbols-outlined text-secondary-fixed-dim">sync_saved_locally</span>
+</div>
+</div>
+</div>
+<!-- Center-Right: Glowing Digital Monospace Countdown Clock & Quick Action Buttons -->
+<div class="flex flex-col sm:flex-row lg:flex-col items-start lg:items-end justify-between gap-space-md">
+<div class="flex flex-col items-start lg:items-end">
+<span class="font-label-sm text-label-sm text-secondary-fixed-dim uppercase tracking-widest font-semibold">Round Clock Remaining</span>
+<div class="flex items-baseline gap-2 font-telemetry-mono text-display-stat text-on-primary font-bold tracking-tight leading-none drop-shadow-md mt-1">
+<span id="liveTimer">08:42</span>
+<span class="font-label-md text-label-md text-primary-fixed-dim font-normal">MIN</span>
+</div>
+</div>
+<!-- Cockpit Operational Direct Triggers -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<button class="inline-flex items-center gap-1.5 px-space-md h-10 rounded-lg bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-on-primary font-label-md text-label-md font-semibold transition-all" type="button">
+<span class="material-symbols-outlined text-lg">pause</span>
+<span>PAUSE ROUND</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md h-10 rounded-lg bg-error hover:opacity-90 text-on-error font-label-md text-label-md font-semibold transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">stop_circle</span>
+<span>CLOSE ROUND</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-space-md h-10 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-low font-label-md text-label-md font-bold transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-lg">lock_open</span>
+<span>UNLOCK NEXT (Q8)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- TWO-COLUMN WORKSPACE: 60% Left Team Table, 40% Right Live Submission Stream -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- LEFT COLUMN: LIVE TEAM PROGRESS TABLE (12-col: 7 cols or ~58%) -->
+<section class="lg:col-span-7 flex flex-col space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md space-y-space-md">
+<!-- Header & Filter Bars -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-xs">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Live Team Progress</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time telemetry showing teams currently competing in Round 2.</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded bg-surface-container text-primary font-bold">24 Active Teams</span>
+</div>
+</div>
+<!-- Filter Sub-Header Strip -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs">
+<!-- Search box -->
+<div class="relative w-full sm:w-64">
+<span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-outline text-lg">search</span>
+<input class="w-full h-9 pl-8 pr-3 rounded-lg bg-surface-container-low font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none transition-colors" placeholder="Filter by team name..." type="text"/>
+</div>
+<!-- Status Pill Segmented Control -->
+<div class="flex items-center gap-1 p-1 bg-surface-container-low rounded-lg w-full sm:w-auto overflow-x-auto">
+<button class="px-space-sm py-1 rounded-md bg-surface-container-lowest text-primary font-label-sm text-label-sm font-semibold shadow-xs" type="button">All</button>
+<button class="px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium" type="button">Active</button>
+<button class="px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium" type="button">Completed</button>
+<button class="px-space-sm py-1 rounded-md text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm font-medium" type="button">Waiting</button>
+</div>
+</div>
+<!-- Dense Data Table Container -->
+<div class="overflow-x-auto rounded-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-primary font-label-sm text-label-sm uppercase tracking-wider h-10">
+<th class="px-space-sm py-2">Rank</th>
+<th class="px-space-sm py-2">Team Name</th>
+<th class="px-space-sm py-2">Question</th>
+<th class="px-space-sm py-2 text-right">Score</th>
+<th class="px-space-sm py-2">Progress</th>
+<th class="px-space-sm py-2 text-center">Status</th>
+<th class="px-space-sm py-2 text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y-0">
+<!-- Row 1: Code Warriors -->
+<tr class="hover:bg-surface-container-low transition-colors h-14">
+<td class="px-space-sm py-space-xs font-telemetry-mono text-primary font-bold">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm">#1</span>
+</td>
+<td class="px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover bg-surface-container" data-alt="A stylized team crest with blue cyber shield icon and modern sharp geometric typography on light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDccVnHGee_6yygtpSVWatvYWPjWxYysSe5tAzM89JZrbKY_phCAX_jG12H84sdxBtgYHAil96LPTvCOuDpfP_d304O0FXq2wT4UfiqTed1ew6sarU7KEilgcr5gutPrsMi1JRRcz2fGr_I4E4IjZ_jA8gsVjid8IgDXF4h5LfaDygO10rmQyuagdMLy9mOYfauSJl7XWCYVDC0Y87UdVU2jxyRz97U9Bu7KKBdTJTk0_lpHf7V64txNw"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-body-md font-semibold text-on-surface truncate">Code Warriors</span>
+<span class="font-body-sm text-body-sm text-outline truncate">4 members • Lead: T. Reyes</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs">
+<span class="font-telemetry-mono text-label-md font-bold px-2 py-0.5 rounded bg-surface-container text-primary">Q8</span>
+</td>
+<td class="px-space-sm py-space-xs text-right font-telemetry-mono font-bold text-on-surface">
+                  120 pts
+                </td>
+<td class="px-space-sm py-space-xs w-32">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-body-sm text-outline">
+<span>40%</span>
+<span>8/20</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 40%;"></div>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Active
+                  </span>
+</td>
+<td class="px-space-sm py-space-xs text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Quick Inspect Team" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Audit Telemetry" type="button">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2: Byte Masters -->
+<tr class="hover:bg-surface-container-low transition-colors h-14">
+<td class="px-space-sm py-space-xs font-telemetry-mono text-primary font-bold">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">#2</span>
+</td>
+<td class="px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover bg-surface-container" data-alt="Geometric minimalist logo featuring stylized electric blue circuit branches and node dots on smooth light canvas" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiReSIYUnUWdiHHXcZiUT-PgH5neNg8BAXPoSyRxiYsMCNYoHSG6dQ_UGDRzVqqrH8pz1r9qd4zvRzA5PD4T8JiO0Q90WQP2ESQqPWLQze8jk1OuH1qZaQ3kZtjX5y_cu9osCaY_eNDKqxkA5TorexkBcPCo9OCXXd1EGBE70QFiwTLq-EXFOOqsu92fyRE4O_fN5HkIuvE6oiqXCnnuijTR5G50-kJvHN7-4yji52sYlfK3ZN68tWTw"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-body-md font-semibold text-on-surface truncate">Byte Masters</span>
+<span class="font-body-sm text-body-sm text-outline truncate">4 members • Lead: K. Patel</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs">
+<span class="font-telemetry-mono text-label-md font-bold px-2 py-0.5 rounded bg-surface-container text-primary">Q7</span>
+</td>
+<td class="px-space-sm py-space-xs text-right font-telemetry-mono font-bold text-on-surface">
+                  110 pts
+                </td>
+<td class="px-space-sm py-space-xs w-32">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-body-sm text-outline">
+<span>35%</span>
+<span>7/20</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Active
+                  </span>
+</td>
+<td class="px-space-sm py-space-xs text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Quick Inspect Team" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Audit Telemetry" type="button">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3: Logic Lords -->
+<tr class="hover:bg-surface-container-low transition-colors h-14">
+<td class="px-space-sm py-space-xs font-telemetry-mono text-primary font-bold">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">#3</span>
+</td>
+<td class="px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<img class="w-8 h-8 rounded-lg object-cover bg-surface-container" data-alt="Modern abstract crest with an optical blue prism hexagon emblem for competitive esports hackathon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY8CF40Px_8GMEJe24pa3TLKii0ISWVuuHequ9Ao-8iZhXoLR1k90USGtPz9aPUUL2wvWGlMMsLkjX_RP6RgITocH73QPaGYWopRK5jSAxU9mKxP9rB0Zy00OYRbSvxb-LXcmy9Xwk8ZYwywCfSKUN8cgBydTeGmjSFWEPKkeGzygcGSCzBCuC5pAIAhU8BQHcS7gDuyx308Fv3uzSaR7xyyYgvEQKAfnVE_LJj3VhtfUpE4TpoydWsQ"/>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-body-md font-semibold text-on-surface truncate">Logic Lords</span>
+<span class="font-body-sm text-body-sm text-outline truncate">3 members • Lead: S. Zhang</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs">
+<span class="font-telemetry-mono text-label-md font-bold px-2 py-0.5 rounded bg-surface-container text-primary">Q6</span>
+</td>
+<td class="px-space-sm py-space-xs text-right font-telemetry-mono font-bold text-on-surface">
+                  90 pts
+                </td>
+<td class="px-space-sm py-space-xs w-32">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-body-sm text-outline">
+<span>30%</span>
+<span>6/20</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 30%;"></div>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Active
+                  </span>
+</td>
+<td class="px-space-sm py-space-xs text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Quick Inspect Team" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Audit Telemetry" type="button">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4: Cyber Knights -->
+<tr class="hover:bg-surface-container-low transition-colors h-14">
+<td class="px-space-sm py-space-xs font-telemetry-mono text-on-surface-variant font-bold">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-low text-outline font-label-sm text-label-sm">#4</span>
+</td>
+<td class="px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold font-telemetry-mono text-body-sm">CK</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-body-md font-semibold text-on-surface truncate">Cyber Knights</span>
+<span class="font-body-sm text-body-sm text-outline truncate">4 members • Lead: E. Rossi</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs">
+<span class="font-telemetry-mono text-label-md font-bold px-2 py-0.5 rounded bg-surface-container text-primary">Q6</span>
+</td>
+<td class="px-space-sm py-space-xs text-right font-telemetry-mono font-bold text-on-surface">
+                  85 pts
+                </td>
+<td class="px-space-sm py-space-xs w-32">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-body-sm text-outline">
+<span>30%</span>
+<span>6/20</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 30%;"></div>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+                    Waiting
+                  </span>
+</td>
+<td class="px-space-sm py-space-xs text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Quick Inspect Team" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Audit Telemetry" type="button">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5: Algo Rhythms -->
+<tr class="hover:bg-surface-container-low transition-colors h-14">
+<td class="px-space-sm py-space-xs font-telemetry-mono text-on-surface-variant font-bold">
+<span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-surface-container-low text-outline font-label-sm text-label-sm">#5</span>
+</td>
+<td class="px-space-sm py-space-xs">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary font-bold font-telemetry-mono text-body-sm">AR</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title text-body-md font-semibold text-on-surface truncate">Algo Rhythms</span>
+<span class="font-body-sm text-body-sm text-outline truncate">4 members • Lead: D. Cooper</span>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs">
+<span class="font-telemetry-mono text-label-md font-bold px-2 py-0.5 rounded bg-surface-container text-primary">Q5</span>
+</td>
+<td class="px-space-sm py-space-xs text-right font-telemetry-mono font-bold text-on-surface">
+                  70 pts
+                </td>
+<td class="px-space-sm py-space-xs w-32">
+<div class="flex flex-col gap-1">
+<div class="flex justify-between font-label-sm text-body-sm text-outline">
+<span>25%</span>
+<span>5/20</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 25%;"></div>
+</div>
+</div>
+</td>
+<td class="px-space-sm py-space-xs text-center">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Active
+                  </span>
+</td>
+<td class="px-space-sm py-space-xs text-right">
+<div class="inline-flex items-center gap-1">
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Quick Inspect Team" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+<button class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container" title="Audit Telemetry" type="button">
+<span class="material-symbols-outlined text-lg">terminal</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer Strip -->
+<div class="flex items-center justify-between pt-space-xs font-label-sm text-label-sm text-outline">
+<span>Showing 5 of 24 tournament teams</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" disabled="" type="button">
+<span class="material-symbols-outlined text-lg">chevron_left</span>
+</button>
+<span class="px-2 py-0.5 rounded bg-surface-container text-on-surface font-semibold">1</span>
+<button class="p-1 rounded hover:bg-surface-container text-on-surface-variant" type="button">
+<span class="material-symbols-outlined text-lg">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- RIGHT COLUMN: LIVE SUBMISSIONS & REAL-TIME STREAM (12-col: 5 cols or ~42%) -->
+<section class="lg:col-span-5 flex flex-col space-y-space-md">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col h-full justify-between">
+<div class="space-y-space-md">
+<!-- Stream Header with pulsating websocket indicator -->
+<div class="flex items-center justify-between pb-space-xs border-b border-transparent">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold">Live Submissions Stream</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Real-time incoming telemetry answers</span>
+</div>
+<!-- Pulsing Websocket Badge -->
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-telemetry-mono">Socket Connected</span>
+</div>
+</div>
+<!-- Feed of recent incoming submissions -->
+<div class="space-y-space-xs">
+<!-- Feed Item 1: Just now - Turing Machine Correct -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="mt-0.5 p-1 rounded-full bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-base block">check</span>
+</div>
+<div class="min-w-0 space-y-0.5">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title text-body-md text-on-surface font-semibold truncate">Code Warriors</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">Q7</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Answer: <span class="font-telemetry-mono text-on-surface font-semibold">"Turing Machine"</span>
+</p>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">+20 pts</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 font-telemetry-mono">Just now</span>
+</div>
+</div>
+<!-- Feed Item 2: 34s ago - State Automaton Incorrect -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="mt-0.5 p-1 rounded-full bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-base block">close</span>
+</div>
+<div class="min-w-0 space-y-0.5">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title text-body-md text-on-surface font-semibold truncate">Byte Masters</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">Q7</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Answer: <span class="font-telemetry-mono text-on-surface font-semibold">"State Automaton"</span>
+</p>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">0 pts (Incorrect)</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 font-telemetry-mono">34s ago</span>
+</div>
+</div>
+<!-- Feed Item 3: 1m ago - Binary Search Tree Correct -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="mt-0.5 p-1 rounded-full bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-base block">check</span>
+</div>
+<div class="min-w-0 space-y-0.5">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title text-body-md text-on-surface font-semibold truncate">Logic Lords</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">Q6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Answer: <span class="font-telemetry-mono text-on-surface font-semibold">"Binary Search Tree"</span>
+</p>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">+15 pts</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 font-telemetry-mono">1m ago</span>
+</div>
+</div>
+<!-- Feed Item 4: 2m ago - Linked List Incorrect -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="mt-0.5 p-1 rounded-full bg-error-container text-on-error-container">
+<span class="material-symbols-outlined text-base block">close</span>
+</div>
+<div class="min-w-0 space-y-0.5">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title text-body-md text-on-surface font-semibold truncate">Cyber Knights</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">Q6</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Answer: <span class="font-telemetry-mono text-on-surface font-semibold">"Linked List"</span>
+</p>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-bold">0 pts</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 font-telemetry-mono">2m ago</span>
+</div>
+</div>
+<!-- Feed Item 5: 3m ago - Dynamic Programming Correct -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-space-xs">
+<div class="flex items-start gap-space-xs min-w-0">
+<div class="mt-0.5 p-1 rounded-full bg-primary-container text-on-primary">
+<span class="material-symbols-outlined text-base block">check</span>
+</div>
+<div class="min-w-0 space-y-0.5">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-title text-body-md text-on-surface font-semibold truncate">Algo Rhythms</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-primary font-bold">Q5</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+                    Answer: <span class="font-telemetry-mono text-on-surface font-semibold">"Dynamic Programming"</span>
+</p>
+</div>
+</div>
+<div class="flex flex-col items-end flex-shrink-0">
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-bold">+15 pts</span>
+<span class="font-label-sm text-label-sm text-outline mt-1 font-telemetry-mono">3m ago</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Real-time solve rate mini spark visual -->
+<div class="pt-space-md">
+<div class="p-space-sm rounded-lg bg-surface-container-low flex items-center justify-between">
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-outline uppercase font-semibold">Solve Velocity</span>
+<div class="font-headline-sm text-body-lg text-primary font-bold">14.2 answers / min</div>
+</div>
+<!-- Inline Mini Wave Sparkline SVG -->
+<svg class="w-28 h-8 text-primary" fill="none" stroke="currentColor" viewbox="0 0 112 32">
+<path d="M1 24l16-6 18 8 20-18 20 8 18-12 18 10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<!-- Bottom Action Link -->
+<a class="mt-space-sm w-full py-2.5 rounded-lg bg-surface-container text-primary hover:bg-surface-container-high font-label-md text-label-md font-semibold transition-colors flex items-center justify-center gap-1" href="#">
+<span>VIEW ALL SUBMISSIONS</span>
+<span class="material-symbols-outlined text-lg">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</div>
+<!-- EVENT NOTIFICATIONS STRIP / REAL-TIME SNACKBAR PREVIEW -->
+<div class="w-full rounded-xl bg-surface-container p-space-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-space-sm shadow-xs">
+<div class="flex items-center gap-space-sm">
+<div class="p-2 rounded-lg bg-surface-container-lowest text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-xl">auto_graph</span>
+</div>
+<div>
+<span class="font-label-md text-label-md text-on-surface font-semibold block">Round Telemetry Insight</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Question 7 solved by 6 teams. Average solve time: <strong class="text-primary font-telemetry-mono font-semibold">2m 14s</strong>. Difficulty curve within nominal threshold.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs self-end sm:self-center">
+<button class="px-space-sm py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high font-label-sm text-label-sm font-semibold transition-colors" type="button">
+        Adjudicate
+      </button>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface" title="Dismiss" type="button">
+<span class="material-symbols-outlined text-lg">close</span>
+</button>
+</div>
+</div>
+<!-- CLIENT-SIDE INTERACTIVITY FOR EMERGENCY DROPDOWN AND COUNTDOWN SIMULATION -->
+<script>
+    // Emergency dropdown toggle
+    const emergencyBtn = document.getElementById('emergencyButton');
+    const emergencyMenu = document.getElementById('emergencyMenu');
+    
+    if (emergencyBtn && emergencyMenu) {
+      emergencyBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        emergencyMenu.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        if (!emergencyMenu.classList.contains('hidden')) {
+          emergencyMenu.classList.add('hidden');
+        }
+      });
+    }
+
+    // Timer simulation
+    let secondsLeft = 8 * 60 + 42;
+    const timerElem = document.getElementById('liveTimer');
+    if (timerElem) {
+      setInterval(() => {
+        if (secondsLeft > 0) {
+          secondsLeft--;
+          const m = Math.floor(secondsLeft / 60).toString().padStart(2, '0');
+          const s = (secondsLeft % 60).toString().padStart(2, '0');
+          timerElem.textContent = `${m}:${s}`;
+        }
+      }, 1000);
+    }
+  </script>
+  <script>
+    const adminPageMap = {
+      dashboard: 'dashboard.html',
+      questions: 'question.html',
+      teams: 'team.html',
+      submissions: 'submission.html',
+      'round-control': 'round_control.html',
+      leaderboard: 'leaderboard.html',
+      analytics: 'analytics.html'
+    };
+    document.querySelectorAll('nav a[data-path]').forEach((link) => {
+      link.href = adminPageMap[link.dataset.path] || '#';
+    });
+  </script>
+</div></main></div></body></html>
