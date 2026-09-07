@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUIZARENA · My Team</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tektur:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app-body" data-page="team">
+
+  <!-- SIDEBAR -->
+  <aside class="side-nav">
+
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="QUIZARENA logo">
+
+      <div>
+        <strong>QUIZARENA</strong>
+        <span>Participant</span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="dashboard.html" class="nav-link">
+        <span>01</span>
+        Dashboard
+      </a>
+
+      <a href="team.html" class="nav-link active">
+        <span>02</span>
+        My Team
+      </a>
+
+      <a href="event.html" class="nav-link">
+        <span>03</span>
+        Event
+      </a>
+
+      <a href="arena.html" class="nav-link">
+        <span>04</span>
+        Quiz Arena
+      </a>
+
+      <a href="leaderboard.html" class="nav-link">
+        <span>05</span>
+        Leaderboard
+      </a>
+
+      <a href="profile.html" class="nav-link">
+        <span>06</span>
+        Profile
+      </a>
+    </nav>
+
+    <div class="side-bottom">
+      <div class="mini-profile">
+        <div class="avatar">HG</div>
+
+        <div>
+          <strong>Harini G</strong>
+          <span>Participant</span>
+        </div>
+      </div>
+
+      <a href="login.html" class="logout-link">Log out</a>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+      <div>
+        <p class="kicker">TEAM MANAGEMENT</p>
+
+        <h1 class="page-title">
+          My Team
+        </h1>
+      </div>
+
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Team Ready
+      </div>
+
+    </header>
+
+
+    <!-- TEAM HERO -->
+    <section class="hero-enter">
+
+      <div class="hero-copy">
+
+        <p class="kicker">YOUR SQUAD</p>
+
+        <h2>
+          Team Velocity
+        </h2>
+
+        <p>
+          Your team is registered for the CSE Night Quiz Challenge.
+          Coordinate, solve and climb the leaderboard together.
+        </p>
+
+      </div>
+
+      <div class="hero-meta">
+
+        <div>
+          <span>TEAM CODE</span>
+          <strong>VLT-4827</strong>
+        </div>
+
+        <div>
+          <span>MEMBERS</span>
+          <strong>04 / 04</strong>
+        </div>
+
+        <div>
+          <span>STATUS</span>
+          <strong>READY</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM CODE -->
+    <section class="panel">
+
+      <div class="panel-head">
+
+        <div>
+          <p class="kicker">TEAM CODE</p>
+
+          <h3>
+            Share with your teammates
+          </h3>
+        </div>
+
+        <span class="code">
+          VLT-4827
+        </span>
+
+      </div>
+
+      <p>
+        Give this unique code to participants who need to join
+        your team before the competition begins.
+      </p>
+
+      <button class="btn" type="button" onclick="copyTeamCode()">
+        Copy Team Code
+      </button>
+
+    </section>
+
+
+    <!-- TEAM MEMBERS -->
+    <section class="panel">
+
+      <div class="panel-head">
+
+        <div>
+          <p class="kicker">TEAM MEMBERS</p>
+
+          <h3>
+            4 participants
+          </h3>
+        </div>
+
+        <span class="status-pill">
+          4 / 4
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">HG</div>
+
+        <div>
+          <strong>Harini G</strong>
+          <span>You · Captain</span>
+        </div>
+
+        <span class="member-status online">
+          ONLINE
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">AK</div>
+
+        <div>
+          <strong>Arun Kumar</strong>
+          <span>Member</span>
+        </div>
+
+        <span class="member-status online">
+          ONLINE
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">SP</div>
+
+        <div>
+          <strong>Sanjay P</strong>
+          <span>Member</span>
+        </div>
+
+        <span class="member-status">
+          AWAY
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">VR</div>
+
+        <div>
+          <strong>Vishnu R</strong>
+          <span>Member</span>
+        </div>
+
+        <span class="member-status online">
+          ONLINE
+        </span>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM ACTIONS -->
+    <section class="split-2">
+
+      <!-- CREATE TEAM -->
+      <div class="panel">
+
+        <p class="kicker">TEAM LEADER</p>
+
+        <h3>
+          Create a new team
+        </h3>
+
+        <p>
+          Start a new team and invite other participants
+          using the generated Team Code.
+        </p>
+
+        <button class="btn btn-block" type="button">
+          Create New Team
+        </button>
+
+      </div>
+
+
+      <!-- JOIN TEAM -->
+      <div class="panel">
+
+        <p class="kicker">JOIN TEAM</p>
+
+        <h3>
+          Have a Team Code?
+        </h3>
+
+        <p>
+          Enter the unique code shared by your teammate.
+        </p>
+
+        <div class="field">
+          <label for="teamCode">Team Code</label>
+
+          <input
+            type="text"
+            id="teamCode"
+            placeholder="e.g. VLT-4827"
+            maxlength="12"
+          >
+        </div>
+
+        <button class="btn btn-block" type="button">
+          Join Team
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM STATUS -->
+    <section class="panel">
+
+      <div class="panel-head">
+
+        <div>
+          <p class="kicker">COMPETITION STATUS</p>
+
+          <h3>
+            Ready for the Arena
+          </h3>
+        </div>
+
+        <span class="status-pill">
+          READY
+        </span>
+
+      </div>
+
+      <p>
+        All 4 team members are registered.
+        You can enter the Quiz Arena when the event is live.
+      </p>
+
+      <a href="arena.html" class="btn">
+        Enter Quiz Arena →
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    function copyTeamCode() {
+      navigator.clipboard.writeText("VLT-4827");
+
+      const button = event.currentTarget;
+      const oldText = button.textContent;
+
+      button.textContent = "Copied ✓";
+
+      setTimeout(() => {
+        button.textContent = oldText;
+      }, 1500);
+    }
+  </script>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

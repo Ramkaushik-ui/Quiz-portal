@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUIZARENA · Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tektur:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app-body" data-page="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="side-nav">
+
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="QUIZARENA logo">
+
+      <div>
+        <strong>QUIZARENA</strong>
+        <span>Participant</span>
+      </div>
+    </div>
+
+    <nav>
+
+      <a href="dashboard.html" class="nav-link active">
+        <span>01</span>
+        Dashboard
+      </a>
+
+      <a href="team.html" class="nav-link">
+        <span>02</span>
+        My Team
+      </a>
+
+      <a href="event.html" class="nav-link">
+        <span>03</span>
+        Event
+      </a>
+
+      <a href="arena.html" class="nav-link">
+        <span>04</span>
+        Quiz Arena
+      </a>
+
+      <a href="leaderboard.html" class="nav-link">
+        <span>05</span>
+        Leaderboard
+      </a>
+
+      <a href="profile.html" class="nav-link">
+        <span>06</span>
+        Profile
+      </a>
+
+    </nav>
+
+    <div class="side-bottom">
+      <div class="mini-profile">
+        <div class="avatar">HG</div>
+
+        <div>
+          <strong>Harini G</strong>
+          <span>Participant</span>
+        </div>
+      </div>
+
+      <a href="login.html" class="logout-link">
+        Log out
+      </a>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN CONTENT -->
+  <main class="content">
+
+    <!-- TOP BAR -->
+    <header class="topbar">
+
+      <div>
+        <p class="kicker">PARTICIPANT DASHBOARD</p>
+
+        <h1 class="page-title">
+          Welcome back, Harini.
+        </h1>
+      </div>
+
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        Competition Live
+      </div>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero-enter">
+
+      <div class="hero-copy">
+
+        <p class="kicker">CURRENT EVENT</p>
+
+        <h2>
+          CSE Night<br>
+          Quiz Challenge
+        </h2>
+
+        <p>
+          Your team is ready. Enter the arena and solve
+          the next unlocked challenge.
+        </p>
+
+        <a href="arena.html" class="btn">
+          Enter Quiz Arena →
+        </a>
+
+      </div>
+
+      <div class="hero-meta">
+
+        <div>
+          <span>ROUND</span>
+          <strong>02 / 05</strong>
+        </div>
+
+        <div>
+          <span>QUESTIONS</span>
+          <strong>08 / 20</strong>
+        </div>
+
+        <div>
+          <span>TEAM SCORE</span>
+          <strong>640 PTS</strong>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+    <section class="stats">
+
+      <div class="stat">
+        <span class="stat-label">TEAM RANK</span>
+        <strong>#07</strong>
+        <small>↑ 3 positions</small>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">YOUR SCORE</span>
+        <strong>180</strong>
+        <small>Personal contribution</small>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">SOLVED</span>
+        <strong>08</strong>
+        <small>of 20 challenges</small>
+      </div>
+
+      <div class="stat">
+        <span class="stat-label">ACCURACY</span>
+        <strong>87%</strong>
+        <small>Keep it up</small>
+      </div>
+
+    </section>
+
+
+    <!-- TWO COLUMN -->
+    <section class="split-2">
+
+      <!-- TEAM -->
+      <div class="panel">
+
+        <div class="panel-head">
+          <div>
+            <p class="kicker">YOUR SQUAD</p>
+            <h3>Team Velocity</h3>
+          </div>
+
+          <a href="team.html" class="text-link">
+            View team →
+          </a>
+        </div>
+
+
+        <div class="member-row">
+
+          <div class="avatar">HG</div>
+
+          <div>
+            <strong>Harini G</strong>
+            <span>You · Captain</span>
+          </div>
+
+          <span class="member-status online">
+            ONLINE
+          </span>
+
+        </div>
+
+
+        <div class="member-row">
+
+          <div class="avatar">AK</div>
+
+          <div>
+            <strong>Arun Kumar</strong>
+            <span>Member</span>
+          </div>
+
+          <span class="member-status online">
+            ONLINE
+          </span>
+
+        </div>
+
+
+        <div class="member-row">
+
+          <div class="avatar">SP</div>
+
+          <div>
+            <strong>Sanjay P</strong>
+            <span>Member</span>
+          </div>
+
+          <span class="member-status">
+            AWAY
+          </span>
+
+        </div>
+
+
+        <div class="member-row">
+
+          <div class="avatar">VR</div>
+
+          <div>
+            <strong>Vishnu R</strong>
+            <span>Member</span>
+          </div>
+
+          <span class="member-status online">
+            ONLINE
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <!-- PROGRESS -->
+      <div class="panel">
+
+        <div class="panel-head">
+          <div>
+            <p class="kicker">ARENA PROGRESS</p>
+            <h3>Challenge Gates</h3>
+          </div>
+
+          <span class="code">
+            40%
+          </span>
+        </div>
+
+
+        <div class="progress-wrap">
+
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 40%;"></div>
+          </div>
+
+          <div class="progress-labels">
+            <span>08 solved</span>
+            <span>20 total</span>
+          </div>
+
+        </div>
+
+
+        <div class="gate-list">
+
+          <div class="gate completed">
+            <span>01</span>
+            <div>
+              <strong>Warm Up</strong>
+              <small>Completed</small>
+            </div>
+            <b>✓</b>
+          </div>
+
+          <div class="gate completed">
+            <span>02</span>
+            <div>
+              <strong>Logic Grid</strong>
+              <small>Completed</small>
+            </div>
+            <b>✓</b>
+          </div>
+
+          <div class="gate active">
+            <span>03</span>
+            <div>
+              <strong>Code Breaker</strong>
+              <small>Unlocked now</small>
+            </div>
+            <b>→</b>
+          </div>
+
+          <div class="gate locked">
+            <span>04</span>
+            <div>
+              <strong>Mind Maze</strong>
+              <small>Locked</small>
+            </div>
+            <b>🔒</b>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEADERBOARD PREVIEW -->
+    <section class="panel leaderboard-preview">
+
+      <div class="panel-head">
+
+        <div>
+          <p class="kicker">LIVE STANDINGS</p>
+          <h3>Leaderboard</h3>
+        </div>
+
+        <a href="leaderboard.html" class="text-link">
+          Full leaderboard →
+        </a>
+
+      </div>
+
+
+      <div class="lb-row">
+
+        <span class="rank-badge">01</span>
+
+        <div class="lb-team">
+          <strong>Team Alpha</strong>
+          <span>4 members</span>
+        </div>
+
+        <strong class="lb-score">920</strong>
+
+      </div>
+
+
+      <div class="lb-row">
+
+        <span class="rank-badge">02</span>
+
+        <div class="lb-team">
+          <strong>Byte Force</strong>
+          <span>4 members</span>
+        </div>
+
+        <strong class="lb-score">860</strong>
+
+      </div>
+
+
+      <div class="lb-row current">
+
+        <span class="rank-badge">07</span>
+
+        <div class="lb-team">
+          <strong>Team Velocity</strong>
+          <span>Your team</span>
+        </div>
+
+        <strong class="lb-score">640</strong>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

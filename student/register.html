@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUIZARENA · Student Registration</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tektur:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="register">
+
+  <main class="auth-page">
+
+    <!-- LEFT SIDE -->
+    <section class="auth-brand">
+
+      <div class="brand-mark">
+        <img src="assets/logo.svg" alt="QUIZARENA logo">
+
+        <div>
+          <strong>QUIZARENA</strong>
+          <span>Student Portal</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="kicker">CSE NIGHT · REGISTRATION</p>
+
+        <h1>
+          Build your team.<br>
+          Enter the arena.
+        </h1>
+
+        <p>
+          Create your participant account and get ready
+          for the ultimate quiz challenge.
+        </p>
+      </div>
+
+      <ul class="heat-list">
+        <li>Create your participant profile</li>
+        <li>Create or join a team</li>
+        <li>Enter the live QuizArena</li>
+        <li>Compete for the top rank</li>
+      </ul>
+
+    </section>
+
+
+    <!-- RIGHT SIDE -->
+    <section class="auth-panel">
+
+      <div class="auth-card">
+
+        <p class="kicker">NEW PARTICIPANT</p>
+
+        <h2>Create Account</h2>
+
+        <p class="lede">
+          Register once and get access to the student portal.
+        </p>
+
+
+        <form id="registerForm">
+
+          <!-- NAME -->
+          <div class="field">
+            <label for="name">Full Name</label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+
+          <!-- EMAIL -->
+          <div class="field">
+            <label for="email">College Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@college.edu"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+
+          <!-- COLLEGE / DEPARTMENT -->
+          <div class="form-grid">
+
+            <div class="field">
+              <label for="college">College</label>
+
+              <input
+                type="text"
+                id="college"
+                name="college"
+                placeholder="College name"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="department">Department</label>
+
+              <input
+                type="text"
+                id="department"
+                name="department"
+                placeholder="CSE"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <!-- PASSWORD -->
+          <div class="field">
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            >
+          </div>
+
+
+          <!-- CONFIRM PASSWORD -->
+          <div class="field">
+            <label for="confirmPassword">Confirm Password</label>
+
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              minlength="6"
+              required
+            >
+          </div>
+
+
+          <!-- TERMS -->
+          <label class="check">
+            <input type="checkbox" id="terms" required>
+            <span>
+              I agree to participate in the QuizArena event.
+            </span>
+          </label>
+
+
+          <button type="submit" class="btn btn-block">
+            Create Account
+          </button>
+
+        </form>
+
+
+        <div class="auth-divider">
+          <span>ALREADY REGISTERED?</span>
+        </div>
+
+
+        <a href="login.html" class="btn btn-ghost btn-block">
+          Student Login
+        </a>
+
+
+        <p class="switch-line">
+          <a href="index.html">← Back to portal</a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

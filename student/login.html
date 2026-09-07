@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUIZARENA · Student Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tektur:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-page="login">
+
+  <main class="auth-page">
+
+    <!-- LEFT SIDE -->
+    <section class="auth-brand">
+
+      <div class="brand-mark">
+        <img src="assets/logo.svg" alt="QUIZARENA logo">
+
+        <div>
+          <strong>QUIZARENA</strong>
+          <span>Student Portal</span>
+        </div>
+      </div>
+
+      <div>
+        <p class="kicker">CSE NIGHT · PARTICIPANT ACCESS</p>
+
+        <h1>
+          The arena<br>
+          is waiting.
+        </h1>
+
+        <p>
+          Sign in to your participant account,
+          join your team and get ready to solve.
+        </p>
+      </div>
+
+      <ul class="heat-list">
+        <li>Compete as a team</li>
+        <li>MCQ + Riddle rounds</li>
+        <li>Progressive question unlocks</li>
+        <li>Live scoring & leaderboard</li>
+      </ul>
+
+    </section>
+
+
+    <!-- RIGHT SIDE -->
+    <section class="auth-panel">
+
+      <div class="auth-card">
+
+        <p class="kicker">WELCOME BACK</p>
+
+        <h2>Student Login</h2>
+
+        <p class="lede">
+          Enter your credentials to access the QuizArena.
+        </p>
+
+
+        <form id="loginForm">
+
+          <div class="field">
+            <label for="email">College Email</label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@college.edu"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+
+          <div class="field">
+            <label for="password">Password</label>
+
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+            >
+          </div>
+
+
+          <div class="form-row">
+
+            <label class="check">
+              <input type="checkbox" id="remember">
+              <span>Remember me</span>
+            </label>
+
+            <a href="#" class="text-link">
+              Forgot password?
+            </a>
+
+          </div>
+
+
+          <button type="submit" class="btn btn-block">
+            Enter QuizArena
+          </button>
+
+        </form>
+
+
+        <div class="auth-divider">
+          <span>OR</span>
+        </div>
+
+
+        <a href="register.html" class="btn btn-ghost btn-block">
+          Create Student Account
+        </a>
+
+
+        <p class="switch-line">
+          New participant?
+          <a href="register.html">Register here</a>
+        </p>
+
+        <p class="switch-line">
+          <a href="index.html">← Back to portal</a>
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

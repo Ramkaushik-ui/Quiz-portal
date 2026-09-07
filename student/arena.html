@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>QUIZARENA · Arena</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Tektur:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="app-body" data-page="arena">
+
+  <!-- SIDEBAR -->
+  <aside class="side-nav">
+
+    <div class="brand-mark">
+      <img src="assets/logo.svg" alt="QUIZARENA logo">
+
+      <div>
+        <strong>QUIZARENA</strong>
+        <span>Participant</span>
+      </div>
+    </div>
+
+    <nav>
+      <a href="dashboard.html" class="nav-link">
+        <span>01</span>
+        Dashboard
+      </a>
+
+      <a href="team.html" class="nav-link">
+        <span>02</span>
+        My Team
+      </a>
+
+      <a href="event.html" class="nav-link">
+        <span>03</span>
+        Event
+      </a>
+
+      <a href="arena.html" class="nav-link active">
+        <span>04</span>
+        Quiz Arena
+      </a>
+
+      <a href="leaderboard.html" class="nav-link">
+        <span>05</span>
+        Leaderboard
+      </a>
+
+      <a href="profile.html" class="nav-link">
+        <span>06</span>
+        Profile
+      </a>
+    </nav>
+
+    <div class="side-bottom">
+      <div class="mini-profile">
+        <div class="avatar">HG</div>
+
+        <div>
+          <strong>Harini G</strong>
+          <span>Participant</span>
+        </div>
+      </div>
+
+      <a href="login.html" class="logout-link">
+        Log out
+      </a>
+    </div>
+
+  </aside>
+
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+
+      <div>
+        <p class="kicker">LIVE CHALLENGE · ROUND 02</p>
+
+        <h1 class="page-title">
+          Quiz Arena
+        </h1>
+      </div>
+
+      <div class="timer">
+        <span>TIME LEFT</span>
+        <strong id="timer">09:42</strong>
+      </div>
+
+    </header>
+
+
+    <!-- ARENA -->
+    <section class="arena-shell">
+
+      <!-- QUESTION RAIL -->
+      <aside class="q-rail">
+
+        <div class="q-rail-head">
+          <span>PROGRESS</span>
+          <strong>08 / 20</strong>
+        </div>
+
+        <div class="q-node done">
+          <span>01</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>02</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>03</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>04</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>05</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>06</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node done">
+          <span>07</span>
+          <small>✓</small>
+        </div>
+
+        <div class="q-node active">
+          <span>08</span>
+          <small>LIVE</small>
+        </div>
+
+        <div class="q-node locked">
+          <span>09</span>
+          <small>🔒</small>
+        </div>
+
+        <div class="q-node locked">
+          <span>10</span>
+          <small>🔒</small>
+        </div>
+
+      </aside>
+
+
+      <!-- QUESTION -->
+      <div class="question-stage">
+
+        <div class="question-top">
+
+          <div>
+            <p class="kicker">QUESTION 08</p>
+
+            <span class="question-type">
+              MULTIPLE CHOICE
+            </span>
+          </div>
+
+          <span class="points">
+            +50 PTS
+          </span>
+
+        </div>
+
+
+        <div class="question-card">
+
+          <p class="question-number">
+            08
+          </p>
+
+          <h2>
+            Which data structure follows the
+            <span>FIFO</span> principle?
+          </h2>
+
+          <p class="question-hint">
+            Select the correct answer. Your team gets one
+            submission for this challenge.
+          </p>
+
+
+          <!-- OPTIONS -->
+          <div class="options">
+
+            <label class="option">
+              <input type="radio" name="answer" value="A">
+
+              <span class="option-key">A</span>
+
+              <span class="option-text">
+                Stack
+              </span>
+            </label>
+
+
+            <label class="option">
+              <input type="radio" name="answer" value="B">
+
+              <span class="option-key">B</span>
+
+              <span class="option-text">
+                Queue
+              </span>
+            </label>
+
+
+            <label class="option">
+              <input type="radio" name="answer" value="C">
+
+              <span class="option-key">C</span>
+
+              <span class="option-text">
+                Tree
+              </span>
+            </label>
+
+
+            <label class="option">
+              <input type="radio" name="answer" value="D">
+
+              <span class="option-key">D</span>
+
+              <span class="option-text">
+                Graph
+              </span>
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACTIONS -->
+        <div class="arena-actions">
+
+          <div>
+            <span class="save-state">
+              ● Answer not submitted
+            </span>
+          </div>
+
+          <button
+            class="btn"
+            type="button"
+            onclick="submitAnswer()"
+          >
+            Submit Answer →
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM STATUS -->
+    <section class="panel">
+
+      <div class="panel-head">
+
+        <div>
+          <p class="kicker">TEAM VELOCITY</p>
+
+          <h3>
+            Team collaboration
+          </h3>
+        </div>
+
+        <span class="status-pill">
+          3 / 4 ONLINE
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">HG</div>
+
+        <div>
+          <strong>Harini G</strong>
+          <span>You · Answering</span>
+        </div>
+
+        <span class="member-status online">
+          ONLINE
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">AK</div>
+
+        <div>
+          <strong>Arun Kumar</strong>
+          <span>Reviewing answer</span>
+        </div>
+
+        <span class="member-status online">
+          ONLINE
+        </span>
+
+      </div>
+
+
+      <div class="member-row">
+
+        <div class="avatar">SP</div>
+
+        <div>
+          <strong>Sanjay P</strong>
+          <span>Waiting</span>
+        </div>
+
+        <span class="member-status">
+          AWAY
+        </span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    function submitAnswer() {
+
+      const selected = document.querySelector(
+        'input[name="answer"]:checked'
+      );
+
+      if (!selected) {
+        alert("Please select an answer first.");
+        return;
+      }
+
+      const state = document.querySelector(".save-state");
+
+      state.textContent = "● Answer submitted";
+
+      alert(
+        "Answer submitted: " + selected.value
+      );
+    }
+  </script>
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>
