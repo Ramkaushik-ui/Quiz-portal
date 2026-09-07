@@ -925,16 +925,9 @@ button:active {
     </h1>
 
 
-    <form
-      onsubmit="return false;"
-    >
-
-
+    <form action="{{ url_for('login') }}" method="POST">
       <div class="field">
-
-        <input
-          type="email"
-          id="loginEmail"
+        <input name="loginEmail" type="email" id="loginEmail"
           placeholder="Email address"
           required
         >
@@ -951,9 +944,7 @@ button:active {
 
       <div class="field">
 
-        <input
-          type="password"
-          id="loginPassword"
+        <input name="loginPassword" type="password" id="loginPassword"
           placeholder="Password"
           required
         >
@@ -998,26 +989,11 @@ button:active {
        SIGNUP
   ============================== -->
 
-  <div
-    id="signupForm"
-    class="hidden"
-  >
-
-    <h1>
-      Create Account
-    </h1>
-
-
-    <form
-      onsubmit="return false;"
-    >
-
-
+  <div id="signupForm" class="hidden">
+    <h1>Create Account</h1>
+    <form action="{{ url_for('signup') }}" method="POST">
       <div class="field">
-
-        <input
-          type="text"
-          id="signupName"
+        <input name="signupName" type="text" id="signupName"
           placeholder="Full name"
           required
         >
@@ -1027,9 +1003,7 @@ button:active {
 
       <div class="field">
 
-        <input
-          type="email"
-          id="signupEmail"
+        <input name="signupEmail" type="email" id="signupEmail"
           placeholder="Email address"
           required
         >
@@ -1046,9 +1020,7 @@ button:active {
 
       <div class="field">
 
-        <input
-          type="password"
-          id="signupPassword"
+        <input name="signupPassword" type="password" id="signupPassword"
           placeholder="Password"
           required
         >
@@ -1058,9 +1030,7 @@ button:active {
 
       <div class="field">
 
-        <input
-          type="password"
-          id="signupConfirm"
+        <input name="signupConfirm" type="password" id="signupConfirm"
           placeholder="Confirm password"
           required
         >

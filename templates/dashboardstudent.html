@@ -14,7 +14,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="app-body" data-page="dashboard">
@@ -23,7 +23,7 @@
   <aside class="side-nav">
 
     <div class="brand-mark">
-      <img src="assets/logo.svg" alt="QUIZARENA logo">
+      <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="QUIZARENA logo">
 
       <div>
         <strong>QUIZARENA</strong>
@@ -33,32 +33,32 @@
 
     <nav>
 
-      <a href="dashboard.html" class="nav-link active">
+      <a href="{{ url_for('dashboard') }}" class="nav-link active">
         <span>01</span>
         Dashboard
       </a>
 
-      <a href="team.html" class="nav-link">
+      <a href="{{ url_for('student_team') }}" class="nav-link">
         <span>02</span>
         My Team
       </a>
 
-      <a href="event.html" class="nav-link">
+      <a href="{{ url_for('student_event') }}" class="nav-link">
         <span>03</span>
         Event
       </a>
 
-      <a href="arena.html" class="nav-link">
+      <a href="{{ url_for('student_arena') }}" class="nav-link">
         <span>04</span>
         Quiz Arena
       </a>
 
-      <a href="leaderboard.html" class="nav-link">
+      <a href="{{ url_for('student_leaderboard') }}" class="nav-link">
         <span>05</span>
         Leaderboard
       </a>
 
-      <a href="profile.html" class="nav-link">
+      <a href="{{ url_for('student_profile') }}" class="nav-link">
         <span>06</span>
         Profile
       </a>
@@ -70,12 +70,12 @@
         <div class="avatar">HG</div>
 
         <div>
-          <strong>Harini G</strong>
+          <strong>{{ user.get("fullname", "Student") }}</strong>
           <span>Participant</span>
         </div>
       </div>
 
-      <a href="login.html" class="logout-link">
+      <a href="{{ url_for('logout') }}" class="logout-link">
         Log out
       </a>
     </div>
@@ -93,7 +93,7 @@
         <p class="kicker">PARTICIPANT DASHBOARD</p>
 
         <h1 class="page-title">
-          Welcome back, Harini.
+          Welcome back, {{ user.get("fullname", "Student") }}.
         </h1>
       </div>
 
@@ -122,7 +122,7 @@
           the next unlocked challenge.
         </p>
 
-        <a href="arena.html" class="btn">
+        <a href="{{ url_for('student_arena') }}" class="btn">
           Enter Quiz Arena →
         </a>
 
@@ -192,7 +192,7 @@
             <h3>Team Velocity</h3>
           </div>
 
-          <a href="team.html" class="text-link">
+          <a href="{{ url_for('student_team') }}" class="text-link">
             View team →
           </a>
         </div>
@@ -203,7 +203,7 @@
           <div class="avatar">HG</div>
 
           <div>
-            <strong>Harini G</strong>
+            <strong>{{ user.get("fullname", "Student") }}</strong>
             <span>You · Captain</span>
           </div>
 
@@ -348,60 +348,29 @@
           <h3>Leaderboard</h3>
         </div>
 
-        <a href="leaderboard.html" class="text-link">
+        <a href="{{ url_for('student_leaderboard') }}" class="text-link">
           Full leaderboard →
         </a>
 
       </div>
 
 
-      <div class="lb-row">
-
-        <span class="rank-badge">01</span>
-
+      {% for t in teams %}
+      <div class="lb-row {% if t.id == team.id %}current{% endif %}">
+        <span class="rank-badge">{{ loop.index }}</span>
         <div class="lb-team">
-          <strong>Team Alpha</strong>
-          <span>4 members</span>
+          <strong>{{ t.team_name }}</strong>
+          <span>{% if t.id == team.id %}Your team{% else %}Participant{% endif %}</span>
         </div>
-
-        <strong class="lb-score">920</strong>
-
+        <strong class="lb-score">{{ t.score }}</strong>
       </div>
-
-
-      <div class="lb-row">
-
-        <span class="rank-badge">02</span>
-
-        <div class="lb-team">
-          <strong>Byte Force</strong>
-          <span>4 members</span>
-        </div>
-
-        <strong class="lb-score">860</strong>
-
-      </div>
-
-
-      <div class="lb-row current">
-
-        <span class="rank-badge">07</span>
-
-        <div class="lb-team">
-          <strong>Team Velocity</strong>
-          <span>Your team</span>
-        </div>
-
-        <strong class="lb-score">640</strong>
-
-      </div>
-
+      {% endfor %}
     </section>
 
   </main>
 
 
-  <script src="js/app.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>

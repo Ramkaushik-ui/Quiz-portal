@@ -14,7 +14,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body data-page="register">
@@ -25,7 +25,7 @@
     <section class="auth-brand">
 
       <div class="brand-mark">
-        <img src="assets/logo.svg" alt="QUIZARENA logo">
+        <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="QUIZARENA logo">
 
         <div>
           <strong>QUIZARENA</strong>
@@ -71,7 +71,7 @@
         </p>
 
 
-        <form id="registerForm">
+        <form action="{{ url_for('signup') }}" method="POST" id="registerForm">
 
           <!-- NAME -->
           <div class="field">
@@ -80,7 +80,7 @@
             <input
               type="text"
               id="name"
-              name="name"
+              name="signupName"
               placeholder="Enter your full name"
               autocomplete="name"
               required
@@ -95,7 +95,7 @@
             <input
               type="email"
               id="email"
-              name="email"
+              name="signupEmail"
               placeholder="you@college.edu"
               autocomplete="email"
               required
@@ -140,7 +140,7 @@
             <input
               type="password"
               id="password"
-              name="password"
+              name="signupPassword"
               placeholder="Create a password"
               autocomplete="new-password"
               minlength="6"
@@ -156,7 +156,7 @@
             <input
               type="password"
               id="confirmPassword"
-              name="confirmPassword"
+              name="signupConfirm"
               placeholder="Re-enter your password"
               autocomplete="new-password"
               minlength="6"
@@ -186,13 +186,13 @@
         </div>
 
 
-        <a href="login.html" class="btn btn-ghost btn-block">
+        <a href="{{ url_for('login') }}" class="btn btn-ghost btn-block">
           Student Login
         </a>
 
 
         <p class="switch-line">
-          <a href="index.html">← Back to portal</a>
+          <a href="{{ url_for('login') }}">← Back to login</a>
         </p>
 
       </div>
@@ -201,7 +201,7 @@
 
   </main>
 
-  <script src="js/app.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>

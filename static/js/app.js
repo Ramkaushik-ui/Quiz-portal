@@ -477,28 +477,8 @@ document.addEventListener(
       document.body.dataset.page;
 
 
-    /* Login */
-    if (page === "login") {
-      initLogin();
-    }
-
-
-    /* Register */
-    if (page === "register") {
-      initRegister();
-    }
-
-
-    /* Protect participant pages */
-    protectPage();
-
-
-    /* Participant information */
+    /* Participant information - keeps the name updates active */
     loadParticipantInfo();
-
-
-    /* Logout */
-    setupLogout();
 
 
     /* Team code copy */

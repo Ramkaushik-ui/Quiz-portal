@@ -14,7 +14,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="app-body" data-page="arena">
@@ -23,7 +23,7 @@
   <aside class="side-nav">
 
     <div class="brand-mark">
-      <img src="assets/logo.svg" alt="QUIZARENA logo">
+      <img src="{{ url_for('static', filename='assets/logo.svg') }}" alt="QUIZARENA logo">
 
       <div>
         <strong>QUIZARENA</strong>
@@ -32,32 +32,32 @@
     </div>
 
     <nav>
-      <a href="dashboard.html" class="nav-link">
+      <a href="{{ url_for('dashboard') }}" class="nav-link">
         <span>01</span>
         Dashboard
       </a>
 
-      <a href="team.html" class="nav-link">
+      <a href="{{ url_for('student_team') }}" class="nav-link">
         <span>02</span>
         My Team
       </a>
 
-      <a href="event.html" class="nav-link">
+      <a href="{{ url_for('student_event') }}" class="nav-link">
         <span>03</span>
         Event
       </a>
 
-      <a href="arena.html" class="nav-link active">
+      <a href="{{ url_for('student_arena') }}" class="nav-link active">
         <span>04</span>
         Quiz Arena
       </a>
 
-      <a href="leaderboard.html" class="nav-link">
+      <a href="{{ url_for('student_leaderboard') }}" class="nav-link">
         <span>05</span>
         Leaderboard
       </a>
 
-      <a href="profile.html" class="nav-link">
+      <a href="{{ url_for('student_profile') }}" class="nav-link">
         <span>06</span>
         Profile
       </a>
@@ -68,12 +68,12 @@
         <div class="avatar">HG</div>
 
         <div>
-          <strong>Harini G</strong>
+          <strong>{{ user.get("fullname", "Student") }}</strong>
           <span>Participant</span>
         </div>
       </div>
 
-      <a href="login.html" class="logout-link">
+      <a href="{{ url_for('logout') }}" class="logout-link">
         Log out
       </a>
     </div>
@@ -304,7 +304,7 @@
         <div class="avatar">HG</div>
 
         <div>
-          <strong>Harini G</strong>
+          <strong>{{ user.get("fullname", "Student") }}</strong>
           <span>You · Answering</span>
         </div>
 
@@ -373,7 +373,7 @@
     }
   </script>
 
-  <script src="js/app.js"></script>
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 
 </body>
 </html>
