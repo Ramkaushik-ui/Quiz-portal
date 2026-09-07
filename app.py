@@ -22,6 +22,9 @@ class User(Base):
     email = Column(String, unique=True, index=True)
     password = Column(String)
     role = Column(String, default="student")
+    team_id = Column(Integer, ForeignKey('teams.id'), nullable=True)
+    
+    team = relationship("Team", back_populates="members")
 
 class Question(Base):
     __tablename__ = 'questions'
@@ -41,6 +44,8 @@ class Team(Base):
     id = Column(Integer, primary_key=True, index=True)
     team_name = Column(String)
     score = Column(Integer, default=0)
+    
+    members = relationship("User", back_populates="team")
     submissions = relationship("Submission", back_populates="team")
 
 class Submission(Base):
