@@ -336,7 +336,7 @@ def seed_db():
         db.commit()
 
     if db.query(User).first() is None:
-        admin_user = User(fullname="Admin User", email="admin@admin.com", password="password", role="admin")
+        admin_user = User(fullname="Admin User", email="admin@gmail.com", password="password", role="admin")
         student_user = User(fullname="Test Student", email="student@college.edu", password="password", role="student")
         cw = db.query(Team).filter_by(team_name="Code Warriors").first()
         ram_user = User(fullname="Ram", email="ram@college.edu", password="password", role="student", team_id=cw.id if cw else None)

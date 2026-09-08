@@ -41,8 +41,9 @@ function getCurrentTeam() {
 }
 
 function logout() {
-  localStorage.removeItem(STORAGE_SESSION);
-  window.location.href = "login.html";
+  localStorage.clear();
+  sessionStorage.clear();
+  window.location.href = "/logout";
 }
 
 
