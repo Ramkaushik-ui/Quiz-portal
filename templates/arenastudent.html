@@ -111,171 +111,104 @@
 
         <div class="q-rail-head">
           <span>PROGRESS</span>
-          <strong>08 / 20</strong>
+          <strong>{{ '%02d' % answered_questions }} / {{ '%02d' % total_questions }}</strong>
         </div>
-
-        <div class="q-node done">
-          <span>01</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>02</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>03</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>04</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>05</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>06</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node done">
-          <span>07</span>
-          <small>✓</small>
-        </div>
-
-        <div class="q-node active">
-          <span>08</span>
-          <small>LIVE</small>
-        </div>
-
-        <div class="q-node locked">
-          <span>09</span>
-          <small>🔒</small>
-        </div>
-
-        <div class="q-node locked">
-          <span>10</span>
-          <small>🔒</small>
-        </div>
+        
+        {% for q in all_questions %}
+            <a href="{{ url_for('student_arena', question_id=q.id) }}" style="text-decoration: none; color: inherit; display: block;">
+            {% if q.id in submitted_dict %}
+                <div class="q-node done {% if question and question.id == q.id %}active{% endif %}" style="{% if question and question.id == q.id %}border: 2px solid #005dac;{% endif %}">
+                  <span>{{ '%02d' % loop.index }}</span>
+                  <small>✓</small>
+                </div>
+            {% elif (not question and q.id not in submitted_dict) or (question and question.id == q.id) %}
+                <div class="q-node active">
+                  <span>{{ '%02d' % loop.index }}</span>
+                  <small>LIVE</small>
+                </div>
+            {% else %}
+                <div class="q-node locked">
+                  <span>{{ '%02d' % loop.index }}</span>
+                  <small>🔒</small>
+                </div>
+            {% endif %}
+            </a>
+        {% endfor %}
 
       </aside>
 
-
       <!-- QUESTION -->
       <div class="question-stage">
-
+        {% if question %}
         <div class="question-top">
-
           <div>
-            <p class="kicker">QUESTION 08</p>
-
-            <span class="question-type">
-              MULTIPLE CHOICE
-            </span>
+            <p class="kicker">QUESTION {{ '%02d' % question.id }}</p>
+            <span class="question-type">{{ question.type }}</span>
           </div>
-
-          <span class="points">
-            +50 PTS
-          </span>
-
+          <span class="points">+{{ question.points }} PTS</span>
         </div>
-
 
         <div class="question-card">
+          <p class="question-number">{{ '%02d' % question.id }}</p>
+          <h2>{{ question.question_text }}</h2>
+          <p class="question-hint">Select the correct answer. Your team gets one submission for this challenge.</p>
 
-          <p class="question-number">
-            08
-          </p>
-
-          <h2>
-            Which data structure follows the
-            <span>FIFO</span> principle?
-          </h2>
-
-          <p class="question-hint">
-            Select the correct answer. Your team gets one
-            submission for this challenge.
-          </p>
-
-
-          <!-- OPTIONS -->
-          <div class="options">
-
-            <label class="option">
-              <input type="radio" name="answer" value="A">
-
-              <span class="option-key">A</span>
-
-              <span class="option-text">
-                Stack
-              </span>
-            </label>
-
-
-            <label class="option">
-              <input type="radio" name="answer" value="B">
-
-              <span class="option-key">B</span>
-
-              <span class="option-text">
-                Queue
-              </span>
-            </label>
-
-
-            <label class="option">
-              <input type="radio" name="answer" value="C">
-
-              <span class="option-key">C</span>
-
-              <span class="option-text">
-                Tree
-              </span>
-            </label>
-
-
-            <label class="option">
-              <input type="radio" name="answer" value="D">
-
-              <span class="option-key">D</span>
-
-              <span class="option-text">
-                Graph
-              </span>
-            </label>
-
-          </div>
-
+          {% if question.id in submitted_dict %}
+             <div class="options" style="padding: 20px; background: #f0fdf4; border-radius: 8px; border: 1px solid #bbf7d0;">
+                <h3 style="color: #166534; margin-bottom: 10px;">Already Submitted</h3>
+                <p><strong>Your Answer:</strong> {{ submitted_dict[question.id].submitted_option }}</p>
+                <p><strong>Status:</strong> {% if submitted_dict[question.id].is_correct %}Correct{% else %}Incorrect{% endif %}</p>
+             </div>
+             
+             <!-- ACTIONS -->
+             <div class="arena-actions" style="margin-top: 30px;">
+               <div><span class="save-state" style="color: #166534;">● Answer submitted</span></div>
+               <button class="btn" type="button" disabled style="opacity: 0.5; cursor: not-allowed;">Already Answered</button>
+             </div>
+          {% else %}
+              <form id="answer-form" method="POST" action="{{ url_for('submit_answer') }}">
+              <input type="hidden" name="question_id" value="{{ question.id }}">
+              <div class="options">
+                <label class="option">
+                  <input type="radio" name="answer" value="A">
+                  <span class="option-key">A</span>
+                  <span class="option-text">{{ question.option_a }}</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="B">
+                  <span class="option-key">B</span>
+                  <span class="option-text">{{ question.option_b }}</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="C">
+                  <span class="option-key">C</span>
+                  <span class="option-text">{{ question.option_c }}</span>
+                </label>
+                <label class="option">
+                  <input type="radio" name="answer" value="D">
+                  <span class="option-key">D</span>
+                  <span class="option-text">{{ question.option_d }}</span>
+                </label>
+              </div>
+              </form>
+              
+              <!-- ACTIONS -->
+              <div class="arena-actions" style="margin-top: 30px;">
+                <div><span class="save-state">● Answer not submitted</span></div>
+                <button class="btn" type="button" onclick="document.getElementById('answer-form').submit()">Submit Answer →</button>
+              </div>
+          {% endif %}
         </div>
-
-
-        <!-- ACTIONS -->
-        <div class="arena-actions">
-
-          <div>
-            <span class="save-state">
-              ● Answer not submitted
-            </span>
-          </div>
-
-          <button
-            class="btn"
-            type="button"
-            onclick="submitAnswer()"
-          >
-            Submit Answer →
-          </button>
-
+        
+        {% else %}
+        
+        <div class="question-card" style="text-align: center; padding: 40px;">
+          <h2>Congratulations!</h2>
+          <p>You have completed all questions in the arena.</p>
         </div>
-
+        
+        {% endif %}
       </div>
-
     </section>
 
 

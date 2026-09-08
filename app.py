@@ -44,6 +44,7 @@ class Team(Base):
     id = Column(Integer, primary_key=True, index=True)
     team_name = Column(String)
     score = Column(Integer, default=0)
+    is_disqualified = Column(Boolean, default=False)
     
     members = relationship("User", back_populates="team")
     submissions = relationship("Submission", back_populates="team")
@@ -184,6 +185,27 @@ def teams():
     teams_list = db.query(Team).order_by(Team.score.desc()).all()
     return render_template('team.html', teams=teams_list)
 
+@app.route('/admin/team/<int:team_id>')
+@admin_required
+def team_detail(team_id):
+    db = get_db()
+    team = db.query(Team).filter(Team.id == team_id).first()
+    if not team:
+        flash("Team not found")
+        return redirect(url_for('teams'))
+    return render_template('team_detail.html', team=team)
+
+@app.route('/admin/team/<int:team_id>/disqualify', methods=['POST'])
+@admin_required
+def disqualify_team(team_id):
+    db = get_db()
+    team = db.query(Team).filter(Team.id == team_id).first()
+    if team:
+        team.is_disqualified = True
+        db.commit()
+        flash(f"Team {team.team_name} disqualified successfully.")
+    return redirect(url_for('teams'))
+
 @app.route('/submissions')
 @admin_required
 def submissions():
@@ -201,11 +223,69 @@ def student_dashboard():
     return render_template('dashboardstudent.html', team=team, teams=teams, user=session)
 
 @app.route('/student/arena')
+@app.route('/student/arena/<int:question_id>')
 @login_required
-def student_arena():
+def student_arena(question_id=None):
     db = get_db()
-    questions_list = db.query(Question).all()
-    return render_template('arenastudent.html', questions=questions_list, user=session)
+    user = db.query(User).filter(User.id == session.get('user_id')).first()
+    if not user or not user.team_id:
+        flash("You are not part of a team.")
+        return redirect(url_for('student_dashboard'))
+    
+    submissions = db.query(Submission).filter(Submission.team_id == user.team_id).all()
+    submitted_question_ids = [s.question_id for s in submissions]
+    submitted_dict = {s.question_id: s for s in submissions}
+    
+    all_questions = db.query(Question).all()
+    
+    if question_id:
+        current_question = next((q for q in all_questions if q.id == question_id), None)
+    else:
+        current_question = next((q for q in all_questions if q.id not in submitted_question_ids), None)
+    
+    total_questions = len(all_questions)
+    answered_questions = len(submitted_question_ids)
+    
+    return render_template('arenastudent.html', 
+                           question=current_question,
+                           all_questions=all_questions,
+                           submitted_dict=submitted_dict,
+                           total_questions=total_questions,
+                           answered_questions=answered_questions,
+                           user=session, 
+                           team=user.team)
+
+@app.route('/student/submit_answer', methods=['POST'])
+@login_required
+def submit_answer():
+    db = get_db()
+    user = db.query(User).filter(User.id == session.get('user_id')).first()
+    if not user or not user.team_id:
+        return redirect(url_for('student_dashboard'))
+    
+    question_id = request.form.get('question_id')
+    answer = request.form.get('answer')
+    
+    if question_id and answer:
+        question = db.query(Question).filter(Question.id == question_id).first()
+        if question:
+            existing = db.query(Submission).filter_by(team_id=user.team_id, question_id=question.id).first()
+            if not existing:
+                is_correct = (answer == question.correct_option)
+                sub = Submission(
+                    team_id=user.team_id,
+                    question_id=question.id,
+                    submitted_option=answer,
+                    is_correct=is_correct
+                )
+                db.add(sub)
+                
+                if is_correct:
+                    user.team.score += question.points
+                    
+                db.commit()
+    
+    return redirect(url_for('student_arena'))
 
 @app.route('/student/event')
 @login_required
@@ -242,13 +322,7 @@ def student_team():
 
 def seed_db():
     db = SessionLocal()
-    if db.query(User).first() is None:
-        admin_user = User(fullname="Admin User", email="admin@admin.com", password="password", role="admin")
-        student_user = User(fullname="Test Student", email="student@college.edu", password="password", role="student")
-        db.add(admin_user)
-        db.add(student_user)
-        db.commit()
-        
+    
     if db.query(Team).first() is None:
         teams = [
             Team(team_name="Code Warriors", score=120),
@@ -256,11 +330,42 @@ def seed_db():
             Team(team_name="Logic Lords", score=90),
             Team(team_name="Cyber Knights", score=85),
             Team(team_name="Algo Rhythms", score=70),
-            Team(team_name="Team Alpha", score=920), 
-            Team(team_name="Byte Force", score=860),
-            Team(team_name="Team Velocity", score=640)
+            Team(team_name="Quantum Qubits", score=65)
         ]
         db.add_all(teams)
+        db.commit()
+
+    if db.query(User).first() is None:
+        admin_user = User(fullname="Admin User", email="admin@admin.com", password="password", role="admin")
+        student_user = User(fullname="Test Student", email="student@college.edu", password="password", role="student")
+        cw = db.query(Team).filter_by(team_name="Code Warriors").first()
+        ram_user = User(fullname="Ram", email="ram@college.edu", password="password", role="student", team_id=cw.id if cw else None)
+        
+        db.add(admin_user)
+        db.add(student_user)
+        db.add(ram_user)
+        
+        # Add members to teams
+        team_members = {
+            "Code Warriors": ["Alex", "Sarah", "David", "Elena"],
+            "Byte Masters": ["Liam", "Noah", "Emma", "Maya"],
+            "Logic Lords": ["James", "Oliver", "Sophia"],
+            "Cyber Knights": ["Daniel", "Lucas", "Mia", "Zoe"],
+            "Algo Rhythms": ["Ethan", "Mason", "Ava", "Isabella"],
+            "Quantum Qubits": ["Benjamin", "Henry", "Chloe", "Evelyn"]
+        }
+        
+        for team_name, members in team_members.items():
+            team = db.query(Team).filter_by(team_name=team_name).first()
+            if team:
+                for member_name in members:
+                    db.add(User(
+                        fullname=member_name,
+                        email=f"{member_name.lower()}@college.edu",
+                        password="password",
+                        role="student",
+                        team_id=team.id
+                    ))
         db.commit()
     
     if db.query(Question).first() is None:

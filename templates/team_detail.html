@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="h-full" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>QUIZARENA Control Center - Team Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased min-h-full">
+    <div class="max-w-4xl mx-auto py-10 px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <a href="{{ url_for('teams') }}" class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium transition-colors">
+                <span class="material-symbols-outlined text-xl mr-1">arrow_back</span>
+                Back to Teams
+            </a>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+            <div class="p-6 sm:p-8 border-b border-slate-200 flex justify-between items-start">
+                <div>
+                    <h1 class="text-3xl font-bold text-slate-900 mb-2">{{ team.team_name }}</h1>
+                    <div class="flex items-center gap-3">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-700 font-semibold text-sm border border-blue-200">
+                            #TEAM-{{ team.id }}
+                        </span>
+                        {% if team.is_disqualified %}
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-700 font-semibold text-sm border border-red-200">
+                                <span class="material-symbols-outlined text-sm">gavel</span>
+                                Disqualified
+                            </span>
+                        {% else %}
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-50 text-green-700 font-semibold text-sm border border-green-200">
+                                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                                Active
+                            </span>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-slate-500 font-medium uppercase tracking-wider mb-1">Total Score</div>
+                    <div class="text-4xl font-bold text-slate-900">{{ team.score }}<span class="text-lg text-slate-500 ml-1">pts</span></div>
+                </div>
+            </div>
+
+            <div class="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Team Members Section -->
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-blue-600">group</span>
+                        Team Members ({{ team.members|length }})
+                    </h2>
+                    
+                    {% if team.members %}
+                    <ul class="space-y-3">
+                        {% for member in team.members %}
+                        <li class="flex items-center p-3 rounded-lg bg-slate-50 border border-slate-100">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-lg mr-3 shadow-sm">
+                                {{ member.fullname[0]|upper }}
+                            </div>
+                            <div>
+                                <div class="font-semibold text-slate-900">{{ member.fullname }}</div>
+                                <div class="text-sm text-slate-500">{{ member.email }}</div>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <div class="p-4 rounded-lg bg-slate-50 text-slate-500 italic text-center border border-slate-200">
+                        No members assigned to this team yet.
+                    </div>
+                    {% endif %}
+                </div>
+
+                <!-- Submissions Section -->
+                <div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-blue-600">assignment</span>
+                        Recent Submissions ({{ team.submissions|length }})
+                    </h2>
+                    
+                    {% if team.submissions %}
+                    <div class="space-y-3 max-h-96 overflow-y-auto pr-2">
+                        {% for sub in team.submissions|reverse %}
+                        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+                            <div class="flex justify-between items-start mb-2">
+                                <div class="font-semibold text-slate-800">Question #{{ sub.question_id }}</div>
+                                {% if sub.is_correct %}
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">
+                                    Correct
+                                </span>
+                                {% else %}
+                                <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">
+                                    Incorrect
+                                </span>
+                                {% endif %}
+                            </div>
+                            <div class="text-sm text-slate-600 truncate">
+                                {{ sub.question.question_text if sub.question else "Unknown question" }}
+                            </div>
+                            <div class="mt-2 text-sm">
+                                <span class="text-slate-500">Submitted:</span> 
+                                <span class="font-medium text-slate-800">{{ sub.submitted_option }}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <div class="p-4 rounded-lg bg-slate-50 text-slate-500 italic text-center border border-slate-200">
+                        No submissions recorded for this team yet.
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if not team.is_disqualified %}
+            <div class="p-6 bg-slate-50 border-t border-slate-200 flex justify-end">
+                <form action="{{ url_for('disqualify_team', team_id=team.id) }}" method="POST" onsubmit="return confirm('Are you sure you want to disqualify {{ team.team_name }}? This action cannot be easily undone.');">
+                    <button type="submit" class="inline-flex items-center gap-2 px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg shadow-sm transition-colors focus:ring-4 focus:ring-red-100">
+                        <span class="material-symbols-outlined text-sm">gavel</span>
+                        Disqualify Team
+                    </button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
